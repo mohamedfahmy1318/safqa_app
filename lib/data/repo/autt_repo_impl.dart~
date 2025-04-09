@@ -1,0 +1,36 @@
+import 'package:dartz/dartz.dart';
+import 'package:ecommerce_app/core/errors/failures.dart';
+import 'package:ecommerce_app/domain/entities/LoginResponseEntity.dart';
+import 'package:ecommerce_app/domain/entities/RegisterResponseEntity.dart';
+import 'package:ecommerce_app/domain/repo/data_sources/remote/auth_remote-data_source.dart';
+import 'package:ecommerce_app/domain/repo/repos/auth_repo.dart';
+import 'package:injectable/injectable.dart';
+
+@Injectable(as: AuthRepository)
+class AuthRepoImpl implements AuthRepository {
+  AuthRemoteDataSource authRemoteDataSource;
+
+  AuthRepoImpl({required this.authRemoteDataSource});
+  @override
+  Future<Either<Failures, RegisterResponseEntity>> register(String email,
+      String password, String name, String phone, String rePassword) async {
+    var either = await authRemoteDataSource.register(
+        email, password, name, phone, rePassword);
+    return either.fold(
+      (error) => Left(error),
+      (response) => Right(
+        response,
+      ),
+    );
+  }
+
+  @override
+  Future<Either<Failures, LoginResponseEntity>> login(
+      String email, String password) async {
+    var either = await authRemoteDataSource.login(email, password);
+    return either.fold(
+      (error) => Left(error),
+      (response) => Right(response),
+    );
+  }
+}
