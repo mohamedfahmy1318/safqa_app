@@ -1,16 +1,20 @@
-# ecommerce_app
+# Safqa Application
 
-A new Flutter project.
+**Safqa** is a simple yet powerful e-commerce mobile application built with Flutter. The app allows users to browse and purchase products easily, providing an intuitive and seamless shopping experience. With a sleek interface and essential features, Safqa is designed to serve as an entry-level online store for both small and medium-sized businesses.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **User Authentication**: Users can register, login, and manage their accounts securely.
+- **Product Catalog**: Display products in various categories with detailed information (name, price, image).
+- **Search Functionality**: Users can search for products based on categories or keywords.
+- **Shopping Cart**: Users can add products to their cart and view the total price before checkout.
+- **Checkout Process**: Easy checkout with basic order summary.
+- **Responsive Design**: Optimized for both Android and iOS, providing a smooth experience across devices.
+  
+## Tech Stack
 
-A few resources to get you started if this is your first Flutter project:
+- **Frontend**: Flutter (for both Android & iOS)
+- **State Management**:  cubit
+- **Backend**: Api
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
